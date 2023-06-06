@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Capturar y descargar foto con marco</title>
+    <style>
+        /* Estilos para el marco */
+        .frame {
+            position: relative;
+            display: inline-block;
+        }
+
+        .frame img {
+            display: block;
+            width: 70%;
+        }
+
+        .frame .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+    </style>
+</head>
+<body>
+    <div class="frame">
+        <img id="frame-img" src="marco.png" alt="Marco">
+        <div class="overlay">
+            <video id="video" width="640" height="480" autoplay></video>
+        </div>
+    </div>
+    <button id="capture-btn">Capturar foto</button>
+
+    <script src="script.js"></script>
+</body>
+</html>
