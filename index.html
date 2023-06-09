@@ -23,7 +23,7 @@
         }
     </style>
 </head>
-<body onload="verificarDispositivo()">
+<body >
     <div class="frame">
         <img id="frame-img" src="marco.png" alt="Marco">
         <div class="overlay">
@@ -32,14 +32,23 @@
     </div>
     <button id="capture-btn">Capturar foto</button>
 
-    <!-- Modal de incompatibilidad para dispositivos iOS -->
-    <div id="modalIncompatible" style="display: none;">
-        <div>
-            <h2>Dispositivo no compatible</h2>
-            <p>Lo sentimos, esta página no es compatible con dispositivos iOS.</p>
-        </div>
-    </div>
-
     <script src="script.js"></script>
+    <script>
+        // Función para verificar el sistema operativo
+        function verificarDispositivo() {
+          var userAgent = navigator.userAgent || navigator.vendor || window.opera;
+      
+          // Verificar si es iOS
+          if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
+            // Mostrar modal o alert
+            alert("La página no es compatible con dispositivos iOS.");
+          }
+        }
+      
+        // Ejecutar la función al cargar la página
+        window.onload = function() {
+          verificarDispositivo();
+        };
+      </script>
 </body>
 </html>
