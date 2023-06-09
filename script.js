@@ -38,3 +38,18 @@
         // Simular un clic en el enlace para iniciar la descarga
         link.click();
     });
+
+    // Función para verificar el tipo de dispositivo
+    function verificarDispositivo() {
+        var userAgent = navigator.userAgent || navigator.vendor || window.opera;
+        
+        // Verificar si es un dispositivo iOS
+        if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
+            // Mostrar mensaje de incompatibilidad en un modal
+            var modal = document.getElementById("modalIncompatible");
+            modal.style.display = "block";
+        } else {
+            // No es un dispositivo iOS, continuar con el flujo normal de la página
+            alert("El dispositivo es compatible");
+        }
+    }

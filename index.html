@@ -23,7 +23,7 @@
         }
     </style>
 </head>
-<body>
+<body onload="verificarDispositivo()">
     <div class="frame">
         <img id="frame-img" src="marco.png" alt="Marco">
         <div class="overlay">
@@ -31,6 +31,14 @@
         </div>
     </div>
     <button id="capture-btn">Capturar foto</button>
+
+    <!-- Modal de incompatibilidad para dispositivos iOS -->
+    <div id="modalIncompatible" style="display: none;">
+        <div>
+            <h2>Dispositivo no compatible</h2>
+            <p>Lo sentimos, esta página no es compatible con dispositivos iOS.</p>
+        </div>
+    </div>
 
     <script src="script.js"></script>
 </body>
